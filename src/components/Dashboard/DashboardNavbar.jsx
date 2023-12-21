@@ -118,7 +118,7 @@ const DashboardNavbar = ({ outLet }) => {
             </nav>
           </div>
           <div
-            className={`mx-auto transition-all content-wrapper bg-red-800 ${
+            className={`mx-auto transition-all content-wrapper  ${
               openSidebar ? " ml-[270px]" : " ml-0"
             } `}
           >

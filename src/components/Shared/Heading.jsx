@@ -5,12 +5,12 @@ const Heading = ({ title, headings, span }) => {
         {title}
       </div>
       <h1 className="text-2xl lg:text-5xl font-bold dark:text-white">
-        {span} <span className="text-blue-500"> {headings}</span>
+        {span} <span className="text-indigo-600"> {headings}</span>
       </h1>
       <div className="flex w-24 mt-1 mb-10 overflow-hidden rounded">
-        <div className="flex-1 h-2 bg-blue-200"></div>
-        <div className="flex-1 h-2 bg-blue-400"></div>
-        <div className="flex-1 h-2 bg-blue-600"></div>
+        <div className="flex-1 h-2 bg-indigo-200"></div>
+        <div className="flex-1 h-2 bg-indigo-400"></div>
+        <div className="flex-1 h-2 bg-indigo-600"></div>
       </div>
     </div>
   );

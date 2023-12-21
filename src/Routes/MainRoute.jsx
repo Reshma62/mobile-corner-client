@@ -5,6 +5,8 @@ import Home from "../pages/HomePage/Home";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import DashboardLayout from "../Layout/DashboardLayout";
+import AddProduct from "../pages/Dashboard/AddProduct";
+import ProductDetails from "../pages/ProductDetails/ProductDetails";
 
 const MainRoute = createBrowserRouter([
   {
@@ -25,11 +27,21 @@ const MainRoute = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
+      {
+        path: "/product/:productId",
+        element: <ProductDetails />,
+      },
     ],
   },
   {
     path: "/dashboard",
     element: <DashboardLayout />,
+    children: [
+      {
+        path: "/dashboard/add-product",
+        element: <AddProduct />,
+      },
+    ],
   },
 ]);
 

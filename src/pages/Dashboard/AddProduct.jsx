@@ -1,9 +1,9 @@
+import useAxiosSecure from "../../Hooks/Axios/useAxiosSecure";
 import Heading from "../../components/shared/Heading";
-import { useState } from "react";
-
 import toast from "react-hot-toast";
 
-const AddBook = () => {
+const AddProduct = () => {
+  const axiosSecure = useAxiosSecure();
   const submitData = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -25,7 +25,7 @@ const AddBook = () => {
       quantity,
     };
 
-    axios
+    axiosSecure
       .post(`/admin/create-book`, booksInfo)
       .then((res) => {
         if (res.data.insertedId) {
@@ -41,7 +41,7 @@ const AddBook = () => {
   };
   return (
     <div className="pt-20">
-      <Heading title={"Add Book"} span={"Add"} headings={"Book"} />
+      <Heading title={"Add Product"} span={"Add"} headings={"Product"} />
       <form onSubmit={submitData} className="font-Cabin ">
         <div className="flex gap-8">
           <div>
@@ -108,11 +108,11 @@ const AddBook = () => {
                 id=""
                 className="border border-solid border-primaryColor w-1/2 px-5 py-2 rounded-lg"
               >
-                {category.map((cat) => (
+                {/*   {category.map((cat) => (
                   <option key={cat._id} value={cat.name}>
                     {cat.name}
                   </option>
-                ))}
+                ))} */}
               </select>
             </div>
             <div className="w-[500px] mb-3">
@@ -141,4 +141,4 @@ const AddBook = () => {
   );
 };
 
-export default AddBook;
+export default AddProduct;
